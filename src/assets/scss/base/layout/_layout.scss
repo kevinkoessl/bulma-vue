@@ -1,0 +1,61 @@
+$header-height: 8rem;
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: $header-height;
+
+  &__content {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  &__logo {
+    z-index: 10;
+    display: flex;
+  }
+
+
+  &:after {
+    content: "";
+    height: $header-height / 2;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+  }
+}
+
+.page-content {
+  margin-top: $header-height;
+  overflow-x: hidden;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.hero-navigation {
+  color: white;
+  width: 100%;
+}
