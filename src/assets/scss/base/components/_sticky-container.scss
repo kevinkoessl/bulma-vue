@@ -1,0 +1,26 @@
+.sticky-container {
+    .sticky-container__placeholder {
+        display: none;
+    }
+
+    .sticky-container__content {
+        z-index: 5;
+        position: relative;
+        &.is-sticky {
+            position: fixed;
+            left: 0;
+            right: 0;
+            z-index: 5;
+
+            + .sticky-container__placeholder {
+                display: block;
+            }
+        }
+    }
+
+    &.is-header {
+        .sticky-container__content {
+            z-index: 30;
+        }
+    }
+}
