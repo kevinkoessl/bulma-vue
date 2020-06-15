@@ -15,7 +15,12 @@ const actions = {
         storedContainers.splice(newContainer.order, 0, newContainer);
         commit('SET_STICKY_CONTAINERS', storedContainers);
     },
+    setStickyContainer: ({commit, state}, container) => {
+        const storedContainers = [...state.stickyContainers];
 
+        storedContainers.splice(container.order, 1, container);
+        commit('SET_STICKY_CONTAINERS', storedContainers);
+    },
     removeStickyContainer: ({commit}, container) => {
         const storedContainers = [...state.stickyContainers];
 
