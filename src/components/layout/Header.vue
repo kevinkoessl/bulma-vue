@@ -1,7 +1,7 @@
 <template>
     <header class="header has-shadow">
         <div class="upload-area is-mobile">
-            <img src="@/assets/lnr-upload.svg">
+            <img src="@/assets/img/lnr-upload.svg">
         </div>
         <MainNavigation/>
     </header>

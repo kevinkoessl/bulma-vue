@@ -123,7 +123,7 @@ export const cmsPages = [
             }, {
                 type: "richtext",
                 data: {
-                    html: "<h1>Wow, this is amazing</h1><p>Lorem ipsum dolor sit amet</p>"
+                    html: "<h1>In dictum, nunc pellentesque rutrum sollicitudin.</h1><p>Sed suscipit tempus massa nec elementum. Ut a varius ligula. Proin ut venenatis elit. Vestibulum eget tortor in risus ultrices mattis. Duis eget risus ornare, malesuada lectus efficitur, malesuada lacus.</p>"
                 }
             }
         ]
@@ -134,7 +134,7 @@ export const cmsPages = [
             {
                 type: "richtext",
                 data: {
-                    html: "<h2 style='text-align: center;'>Intro Text</h2><p>Lorem ipsum dolor sit amet</p>"
+                    html: "<h2 style='text-align: center;'>Intro Text</h2><p>Proin aliquam nibh leo, sit amet hendrerit est porta id. Cras vel nisi ut ante pretium posuere a sit amet metus. Vestibulum sollicitudin velit et bibendum congue.</p>"
                 }
             },
             {
@@ -146,12 +146,12 @@ export const cmsPages = [
             {
                 type: "text",
                 data: {
-                    text: "Weisse, die Tour vonne Kneipe nache Hütte bin ich vollsteif abgelatscht. Hier siehts aus wie bei Hempels unterm Sofa! Ker guck Dir ma dat süße Stöppken an. Geh mal wech mit Deine Plautze. Komm wir gehn Mittach essen. Und mach mir keine Fissematenten! Ker dat macht mich feddich! Getz is ma Ruhe im Kabuff! Geh mir getz nich auffe Pimpanellen! Dann is ma richtich Trallafitti. Mach hier nich son Killefitt! Was guckse denn so bedröppelt? Kannse dem Ömmaken ma über de Straße helfen? Da kommse nich gut bei wech, dat sach ich Dir. Da verlierste doch den Überblick bei dem ganzen Kuddelmuddel. Getz mach den Apparillo aus! Sach ma! Dat is doch pille-palle. Dat kannse Dir abschminken. Dann is ma richtich Trallafitti."
+                    text: "Tempor semper lectus. Suspendisse egestas, est ac tincidunt placerat, elit lacus suscipit magna, id dignissim magna ligula laoreet ipsum. Quisque turpis ligula, iaculis in tincidunt eu, convallis sit amet sem. Vivamus ut dui eleifend, euismod dui et, tincidunt erat."
                 }
             }, {
                 type: "richtext",
                 data: {
-                    html: "<h1>Ich muss gleich wieder auffe Maloche. Komm annen Tisch, gleich gibbet Essen.</h1><p>Lorem ipsum dolor sit amet</p>"
+                    html: "<h1>Cras in justo non ligula euismod fermentum. Maecenas tincidunt justo et volutpat volutpat. Aenean imperdiet orci vel dui posuere tempus. Phasellus sit amet turpis dignissim, malesuada nisl et, viverra ante. Duis vestibulum, risus in vulputate porta, eros orci fermentum quam, sit amet blandit tellus urna id mauris. Nam rhoncus sit amet est eu egestas. Vivamus rhoncus justo at risus molestie, id consequat purus mollis.</h1> Nunc consequat neque eleifend diam eleifend viverra. Donec sollicitudin varius diam a fringilla. Nunc risus nibh, pellentesque a neque quis.</p>"
                 }
             }
         ]

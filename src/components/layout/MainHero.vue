@@ -3,7 +3,7 @@
         <div class="hero is-large is-primary main-hero" ref="hero"
              :class="{'is-sticky': isSticky}"
              :style="{'top': (isSticky ?  112 + heightToStickAt: 0) + 'px'}">
-            <img alt="Hero Banner" src="@/assets/BannerImage.png" class="main-hero__image">
+            <img alt="Hero Banner" src="@/assets/img/BannerImage.png" class="main-hero__image">
             <div class="hero-body main-hero__body">
                 <div class="container">
                     <h1 class="title is-1">Industrieller 3D-Druck</h1>
@@ -16,7 +16,7 @@
                     <div class="columns">
                         <div class="column is-one-fifth">
                             <a class="icon upload-icon">
-                                <img src="@/assets/lnr-upload-white.svg">
+                                <img src="@/assets/img/lnr-upload-white.svg">
                             </a>
                         </div>
                         <div class="column is-three-fifths upload-actions">

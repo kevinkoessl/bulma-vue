@@ -29,16 +29,16 @@
                     <h3 class="footer__title">Folgen Sie uns auch auf</h3>
                     <div class="social__links">
                         <a class="social-link">
-                            <img src="@/assets/twitter.svg">
+                            <img src="@/assets/img/twitter.svg">
                         </a>
                         <a class="social-link">
-                            <img src="@/assets/twitter.svg">
+                            <img src="@/assets/img/twitter.svg">
                         </a>
                         <a class="social-link">
-                            <img src="@/assets/twitter.svg">
+                            <img src="@/assets/img/twitter.svg">
                         </a>
                         <a class="social-link">
-                            <img src="@/assets/twitter.svg">
+                            <img src="@/assets/img/twitter.svg">
                         </a>
                     </div>
                 </div>

@@ -23,10 +23,10 @@
             <transition name="fade">
                 <div class="story__controls" v-if="isSticky">
                     <RouterLink class="control--previous" :to="storyPrevious">
-                        <img src="@/assets/chevron-left.svg" style="transform: rotate(180deg)">
+                        <img src="@/assets/img/chevron-left.svg" style="transform: rotate(180deg)">
                     </RouterLink>
                     <RouterLink class="control--next" :to="storyNext">
-                        <img src="@/assets/chevron-right.svg">
+                        <img src="@/assets/img/chevron-right.svg">
                     </RouterLink>
                 </div>
             </transition>

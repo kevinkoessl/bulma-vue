@@ -3,7 +3,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <RouterLink class="navbar-item header__logo" to="/">
-                    <img alt="Murtfeldt As logo" src="@/assets/logo.png">
+                    <img alt="Murtfeldt As logo" src="@/assets/img/logo.png">
                 </RouterLink>
                 <!-- div id="nav">
                     <router-link to="/">Home</router-link> <router-link to="/about">About</router-link>
