@@ -1,0 +1,88 @@
+.hero.main-hero {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 2px solid white;
+
+    &.is-sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        @include has-shadow();
+
+        transition: box-shadow $speed $easing;
+    }
+
+    &.hero.is-large {
+        .hero-body {
+            padding: 13rem 1.5rem;
+        }
+    }
+
+    .main-hero__body {
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: transparentize($grey-darker, 0.7);
+        }
+    }
+
+    .main-hero__image {
+        position: absolute;
+    }
+
+    .hero-foot {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .hero.main-hero {
+        display: flex;
+
+        .hero-foot {
+            display: block;
+        }
+
+        .main-hero__footer {
+            position: relative;
+            background: transparentize($primary, 0.3);
+            display: block;
+            padding: 2rem;
+
+            .icon.upload-icon {
+                width: 4rem;
+                height: 4rem;
+                padding: 1rem;
+                border: 1px solid $white;
+                border-radius: 50%;
+                @include scale-on-hover(1.1);
+            }
+
+            .upload-icon img {
+                width: 100%;
+            }
+        }
+
+        .upload-actions {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            > * {
+                width: percentage(1/3);
+            }
+
+            .is-size-4 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+

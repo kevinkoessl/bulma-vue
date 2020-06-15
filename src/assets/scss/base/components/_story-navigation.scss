@@ -1,0 +1,96 @@
+.navbar.navbar-story {
+    background-color: $primary-lighter;
+
+    .navbar-menu {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    &.is-sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        @include has-shadow();
+    }
+
+    .navbar-link {
+        font-size: $size-3;
+        color: $light;
+        background-color: $primary-dark;
+        border: 1px solid $grey-lighter;
+        border-bottom: 0;
+        width: 23rem;
+        font-weight: 500;
+    }
+
+    .navbar-item.has-dropdown {
+        &:hover {
+            .navbar-link {
+                background-color: $primary;
+            }
+        }
+    }
+
+    .navbar-dropdown {
+        border-radius: 0;
+        border: 1px solid $grey-lighter;
+        border-top: 0;
+        padding: 0;
+
+        .navbar-item {
+            font-size: $size-4;
+            border-bottom: 2px solid $primary-lighter;
+            color: $primary-dark;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            &:hover {
+                color: $primary-darker;
+            }
+        }
+    }
+
+    .story__controls {
+        position: fixed;
+        height: 5rem;
+        top: 45%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        .control--previous, .control--next {
+            background-color: transparentize($primary-lightest, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            border: 1px solid $primary-dark;
+
+            @include scale-on-hover(1.05);
+
+            &:hover {
+                background-color: $primary-lightest;
+            }
+        }
+
+        .control--previous {
+            padding-right: 0.4rem;
+        }
+
+        .control--next {
+            padding-left: 0.4rem;
+        }
+
+        img {
+            margin: 0;
+            width: 1.5rem;
+        }
+    }
+}
