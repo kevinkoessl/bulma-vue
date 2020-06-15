@@ -1,7 +1,7 @@
 <template>
     <div class="sticky-container">
         <div :class="{'is-sticky' : isSticky}"
-             :style="{'top' : isSticky ? heightToStickAt + 'px' : '0px'}"
+             :style="{'top' : isSticky ? - heightToStickAt + 'px' : '0px'}"
              class="sticky-container__content"
              ref="stickyContainer">
             <slot/>
@@ -20,6 +20,7 @@
                 isSticky: false,
                 pageYOffset: null,
                 containerHeight: null,
+                interval: null
             }
         },
         props: {
@@ -28,23 +29,21 @@
                 required: true
             }
         },
+        watch: {
+            containerHeight() {
+                this.$store.dispatch('setStickyContainer', {
+                    order: this.order,
+                    containerHeight: this.containerHeight,
+                    pageYOffset: this.pageYOffset
+                });
+            }
+        },
         computed: {
             heightToStickAt() {
                 return this.$store.getters.heightOfAllStickyContainers(this.order);
             }
         },
         methods: {
-            /** Evaluate whether the element has reached it's sticking position yet */
-            scroll() {
-                let scrollPosition = window.pageYOffset;
-
-                if (!this.isSticky) {
-                    this.pageYOffset = scrollPosition + this.$refs.stickyContainer.getBoundingClientRect().top;
-                }
-                this.isSticky = scrollPosition + this.heightToStickAt >= this.pageYOffset
-
-                this.containerHeight = this.$refs.stickyContainer.offsetHeight;
-            },
             /** Reevaluate the page offset after resizing the browser window */
             setPageYOffset() {
                 if (this.$refs.stickyPlaceholder) {
@@ -54,17 +53,26 @@
                 }
                 this.scroll();
             },
-            attachEventListeners() {
-                window.addEventListener('scroll', this.scroll);
-                window.addEventListener('resize', this.setPageYOffset);
+            /** Evaluate whether the element has reached it's sticking position yet */
+            evaluateStickyness() {
+                let scrollPosition = window.pageYOffset;
+                let previousState = this.isSticky;
+
+                this.isSticky = scrollPosition + this.heightToStickAt >= this.$refs.stickyContainer.offsetTop;
+
+                if (this.isSticky !== previousState) {
+                    this.$emit(this.isSticky ? 'stick' : 'unstick');
+                }
+            },
+            startInterval() {
+                this.interval = setInterval(() => {
+                    this.evaluateStickyness()
+                }, 10);
             },
             removeEventListeners() {
                 window.removeEventListener('scroll', this.scroll);
                 window.removeEventListener('resize', this.setPageYOffset);
             }
-        },
-        created() {
-            this.attachEventListeners();
         },
         mounted() {
             this.pageYOffset = this.$refs.stickyContainer.getBoundingClientRect().top;
