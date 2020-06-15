@@ -1,0 +1,15 @@
+@mixin has-shadow {
+    -webkit-box-shadow: 0px 0px 10px 3px transparentize($grey-darker, 0.5);
+    -moz-box-shadow: 0px 0px 10px 3px transparentize($grey-darker, 0.5);
+    box-shadow: 0px 0px 10px 3px transparentize($grey-darker, 0.5);
+}
+
+@mixin scale-on-hover($scale) {
+    transform: scale(1);
+    transition: transform $speed $easing;
+
+    &:hover {
+        transform: scale($scale);
+        transition: transform $speed $easing;
+    }
+}

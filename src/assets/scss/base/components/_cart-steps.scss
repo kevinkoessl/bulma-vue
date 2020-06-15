@@ -1,0 +1,57 @@
+.cart-steps {
+    z-index: 0;
+    margin: auto;
+    width: percentage(2/3);
+    transform: translateY(12px);
+
+    .columns {
+        background-color: white;
+    }
+    .step {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        font-size: $size-4;
+        opacity: 0.4;
+        padding: 2rem;
+
+        &.is-completed {
+            opacity: 1;
+        }
+
+        .step__number {
+            color: $primary-dark;
+            font-size: $size-3;
+            padding: 0 1rem;
+        }
+    }
+
+
+    position: relative;
+
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        top: 50%;
+        bottom: 0;
+        left: 50px;
+        right: 50px;
+        -moz-border-radius: 100px / 10px;
+        border-radius: 100px / 10px;
+    }
+
+    &:after {
+        right: 10px;
+        left: auto;
+        background-color: black;
+        -webkit-transform: skew(20deg) rotate(3deg);
+        -moz-transform: skew(8deg) rotate(3deg);
+        -ms-transform: skew(8deg) rotate(3deg);
+        -o-transform: skew(8deg) rotate(3deg);
+        transform: skew(20deg) rotate(3deg);
+    }
+}

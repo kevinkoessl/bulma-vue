@@ -1,0 +1,108 @@
+.header {
+    height: $header-height;
+    background-color: #ffffff;
+    color: $light;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+
+    &:after {
+        content: "";
+        height: 3.25rem;
+        width: 100%;
+        display: block;
+        bottom: 2px;
+        background-color: $grey;
+        position: absolute;
+    }
+
+    .navbar {
+        background: none;
+    }
+
+    .navbar-menu {
+        align-items: flex-end;
+        padding-bottom: 2px;
+    }
+
+    .navbar-item img {
+        max-height: $header-height;
+    }
+
+
+    a.navbar-item {
+        font-size: $size-5;
+        color: white;
+        &:hover, &:focus-within {
+            background: none;
+            color: $grey-lighter
+        }
+    }
+
+    .navbar-end .navbar-item {
+        height: 3.25rem;
+    }
+
+    .navbar-brand {
+        align-items: flex-end;
+    }
+
+    &__logo.navbar-item {
+        padding: 0
+    }
+
+    &__content {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+
+    .upload-area {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        border: 1px solid $primary;
+        border-radius: 50%;
+        margin: 0.5rem;
+
+        img {
+            transform: translateY(-1px);
+        }
+    }
+}
+
+.page-content {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+@media screen and (min-width: $desktop) {
+    .header {
+        .upload-area {
+            &.is-mobile {
+                display: none;
+            }
+        }
+    }
+}
+
+.navbar-item.has-dropdown:hover {
+    .navbar-dropdown {
+        display: block;
+    }
+}

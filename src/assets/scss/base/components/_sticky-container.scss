@@ -1,11 +1,12 @@
 .sticky-container {
     .sticky-container__placeholder {
-        display: none;
+        /** display: none; */
     }
 
     .sticky-container__content {
         z-index: 5;
         position: relative;
+
         &.is-sticky {
             position: fixed;
             left: 0;
@@ -23,4 +24,12 @@
             z-index: 30;
         }
     }
+}
+
+.sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 112px;
+    margin: 0;
 }

@@ -1,0 +1,55 @@
+$footer-background-color: $grey-dark;
+$footer-color: $light;
+
+.footer {
+    position: relative;
+
+    .footer__title {
+        text-transform: uppercase;
+        color: $grey;
+        font-family: MetaProLight;
+        font-size: $size-4;
+    }
+
+    .footer__navigation {
+        color: $text-light;
+
+        .footer__link {
+            display: block;
+            font-size: $size-4;
+
+            color: $light;
+
+            &:hover, &:focus {
+                color: $grey-lighter;
+            }
+        }
+    }
+
+    .social__links {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+
+        .social-link {
+
+
+            img {
+                @include scale-on-hover(1.1);
+                width: 4rem;
+            }
+        }
+    }
+    .footer__copyright {
+        background-color: $primary-dark;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.5rem;
+        p {
+            font-size: $size-5;
+        }
+
+    }
+}

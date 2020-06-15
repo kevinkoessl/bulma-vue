@@ -1,21 +1,20 @@
 <template>
-    <header class="header">
-        <div class="header__content">
-            <div class="header__logo">
-                <img alt="Murtfeldt As logo" src="@/assets/logo.png">
-            </div>
-            <div id="nav">
-                <router-link class="has-background-dark" to="/">Home</router-link> <router-link to="/about">About</router-link>
-            </div>
+    <header class="header has-shadow">
+        <div class="upload-area is-mobile">
+            <img src="@/assets/lnr-upload.svg">
         </div>
+        <MainNavigation/>
     </header>
 </template>
-
 <script>
+    import {mapGetters} from "vuex";
+    import MainNavigation from "./MainNavigation";
+
     export default {
         name: "Header",
+        components: {MainNavigation},
+        computed: {
+            ...mapGetters(['mainNavigation', 'contentNavigation'])
+        }
     }
 </script>
-
-<style>
-</style>

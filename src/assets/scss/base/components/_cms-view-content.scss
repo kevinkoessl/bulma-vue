@@ -1,0 +1,24 @@
+.cms-view__content {
+    padding: 5rem 0;
+
+    .navbar-story {
+       margin: 3rem 0;
+
+        &+ .sticky-container__placeholder {
+            margin: 3rem 0;
+        }
+
+        &.is-sticky {
+            margin: 0;
+        }
+    }
+
+    h2 {
+        font-size: $size-1
+    }
+
+    img {
+        width: 100%;
+        margin: 2rem 0;
+    }
+}

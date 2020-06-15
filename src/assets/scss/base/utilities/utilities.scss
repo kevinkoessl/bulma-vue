@@ -1,0 +1,58 @@
+.has-shadow {
+    @include has-shadow();
+}
+
+.scale-on-hover {
+    @include scale-on-hover(1.1);
+}
+
+.button {
+    &.is-primary-dark {
+        color: $primary-invert;
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+
+        &:hover {
+            background-color: lighten($primary-dark, 2);
+            color: $primary-invert;
+            border-color: $primary-dark;
+        }
+    }
+}
+
+
+.roll-enter-active {
+    transition: all 0.5s $easing;
+    transform: translate(-100%, 0);
+}
+
+.roll-leave-active {
+    transition: all 0.5s $easing;
+    transform: translateY(-50%)
+}
+
+.roll-enter {
+    opacity: 0;
+    transform: translate(-100%, 50%);
+}
+
+.roll-leave-active {
+    opacity: 0;
+    transform: translate(0, -50%);
+}
+
+.fade-enter-active {
+    transition: all 0.5s $easing;
+}
+
+.fade-leave-active {
+    transition: all 0.5s $easing;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-leave-active {
+    opacity: 0;
+}

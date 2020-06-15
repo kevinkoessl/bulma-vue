@@ -1,0 +1,23 @@
+.page {
+    font-family: MetaProNormal, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    font-size: $size-6;
+    font-family: MetaProLight;
+    font-weight: 400;
+}
+
+.title {
+    &.is-1 {
+        font-family: MetaProLight;
+        font-weight: 400;
+    }
+
+    &.is-5 {
+        font-family: MetaProLight;
+        font-weight: 400;
+    }
+}
