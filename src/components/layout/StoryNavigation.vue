@@ -3,13 +3,26 @@
         <nav class="navbar navbar-story" role="navigation" ref="storynavigation" :class="{'is-sticky': isSticky}"
              :style="{'top': (isSticky ?  headerHeight : 0) + 'px'}">
             <div class=" container">
-                <div class="navbar-menu">
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                        360° Leistungsportfolio
+                    </div>
+                    <a role="button" class="navbar-burger burger" @click="expanded = !expanded"
+                       :class="{'is-active': expanded}">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="navbar-menu" :class="{'is-active': isSticky ? expanded : true}">
                     <div class="navbar-item has-dropdown"
+                         :class="{'is-active': activeDropdowns[index]}"
                          v-for="(navbarMenu, index) in contentNavigation"
-                         v-bind:key="index">
-                        <RouterLink class="navbar-link is-arrowless" :to="navbarMenu.path">
+                         v-bind:key="index"
+                         @click="openDropdown(index)">
+                        <a class="navbar-link is-arrowless" :to="navbarMenu.path">
                             {{ navbarMenu.name }}
-                        </RouterLink>
+                        </a>
                         <div class="navbar-dropdown">
                             <RouterLink class="navbar-item" v-for="(navbarItem, childIndex) in navbarMenu.children"
                                         :to="navbarMenu.path + navbarItem.path"
@@ -44,10 +57,12 @@
         data() {
             return {
                 isSticky: false,
-                headerHeight: 112 + 128,
+                headerHeight: 56,
                 heroFooterHeight: 0,
                 heroHeight: 0,
                 scrollOffset: 0,
+                expanded: false,
+                activeDropdowns: []
             }
         },
         computed: {
@@ -63,6 +78,13 @@
             }
         },
         methods: {
+            openDropdown(index) {
+                this.activeDropdowns = [];
+                for (let i = 0; i < this.contentNavigation.length; i++) {
+                    this.activeDropdowns[index] = false;
+                }
+                this.activeDropdowns[index] = true;
+            },
             evaluateStickyness() {
                 let scrollPosition = window.pageYOffset;
                 this.adjustHeights();
