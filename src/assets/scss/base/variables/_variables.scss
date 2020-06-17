@@ -2,4 +2,8 @@
 @import "derived-variables";
 
 $phi: 1.6180339887498948482; /* lol */
-$header-height: 7rem;
+$header-height-mobile: 3.5rem;
+$header-height-desktop: 7rem;
+
+$z-index-header: 100;
+$z-index-side-menu: 50;
