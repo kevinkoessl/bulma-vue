@@ -6,6 +6,22 @@
     @include scale-on-hover(1.1);
 }
 
+.is-mobile-only {
+    display: block;
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.is-desktop-only {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+        display: block;
+    }
+}
+
 .button {
     &.is-primary-dark {
         color: $primary-invert;

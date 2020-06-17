@@ -1,20 +1,42 @@
 .header {
-    height: $header-height;
-    background-color: #ffffff;
-    color: $light;
+    height: $header-height-mobile;
+    background-color: $grey;
+    z-index: $z-index-header;
+
     position: fixed;
-    z-index: 100;
     left: 0;
     right: 0;
 
-    &:after {
+    &:before {
         content: "";
-        height: 3.25rem;
-        width: 100%;
-        display: block;
-        bottom: 2px;
         background-color: $grey;
+        display: block;
         position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .navbar-brand {
+        align-items: center;
+        justify-content: flex-end;
+        background-color: white;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 100%;
+            background-color: $grey;
+            clip-path: polygon(0 $header-height-mobile, 0px $header-height-mobile, 100% 0%, 0 0);
+            position: absolute;
+            left: 0;
+        }
+
+        .navbar-item {
+            margin: auto;
+            padding: 0;
+        }
     }
 
     .navbar {
@@ -22,18 +44,41 @@
     }
 
     .navbar-menu {
+        display: block;
         align-items: flex-end;
-        padding-bottom: 2px;
+        background-color: $grey;
+        position: fixed;
+        top: $header-height-mobile;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 15rem;
+        padding: 2rem;
+        z-index: $z-index-side-menu;
+        transform: translateX(100%);
+        transition: transform $speed $easing;
+        overflow: auto;
+
+        &.is-active {
+            transform: translateX(0);
+            transition: transform 150ms $easing;
+        }
+
     }
 
-    .navbar-item img {
-        max-height: $header-height;
+    .header__logo {
+        display: flex;
+
+        img {
+            max-height: $header-height-mobile;
+        }
     }
 
 
-    a.navbar-item {
-        font-size: $size-5;
+    .navbar-item {
         color: white;
+        font-size: $size-5;
+
         &:hover, &:focus-within {
             background: none;
             color: $grey-lighter
@@ -44,8 +89,26 @@
         height: 3.25rem;
     }
 
-    .navbar-brand {
-        align-items: flex-end;
+    .navbar-burger {
+        height: $header-height-mobile;
+        background-color: $grey;
+        color: $light;
+        margin-left: 2rem;
+
+        &:hover {
+            background-color: $grey;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 100%;
+            background-color: $grey;
+            clip-path: polygon(0 100%, 100% 100%, 100% 0%);
+            position: absolute;
+            left: -75%;
+        }
     }
 
     &__logo.navbar-item {
@@ -65,15 +128,14 @@
         z-index: 10;
     }
 
-    .upload-area {
+    .header__upload-area {
         width: 2rem;
         height: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: absolute;
-        right: 0;
         border: 1px solid $primary;
+        padding: 0;
         border-radius: 50%;
         margin: 0.5rem;
 
@@ -83,20 +145,64 @@
     }
 }
 
-.page-content {
+.page__content {
     overflow-x: hidden;
-}
-
-body {
-    margin: 0;
 }
 
 @media screen and (min-width: $desktop) {
     .header {
+        height: $header-height-desktop;
+        background-color: $white;
+
+        &:before {
+            height: $header-height-mobile;
+            bottom: 2px;
+        }
+
+        .header__logo {
+            img {
+                max-height: $header-height-desktop;
+            }
+        }
+
         .upload-area {
             &.is-mobile {
                 display: none;
             }
+        }
+
+        .navbar {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .navbar-brand {
+            background: none;
+
+            &:after {
+                content: none;
+            }
+        }
+
+        .header__upload-area.is-mobile-only {
+            display: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+            position: absolute;
+            height: $header-height-desktop / 2;
+            top: auto;
+            right: 0;
+            bottom: 2px;
+            width: auto;
+            max-width: none;
+            padding: 0;
+            transform: none;
+            transition: none;
+            overflow: auto;
         }
     }
 }

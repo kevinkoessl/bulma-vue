@@ -2,9 +2,15 @@
     <nav class="navbar" role="navigation">
         <div class="container">
             <div class="navbar-brand">
-                <RouterLink class="navbar-item header__logo" to="/">
-                    <img alt="Murtfeldt As logo" src="@/assets/img/logo.png">
+                <RouterLink class="navbar-item" to="/">
+                    <div class="header__logo">
+                        <img alt="Murtfeldt As logo" src="@/assets/img/logo.png">
+                    </div>
                 </RouterLink>
+                <div class="navbar-item">
+                    <div class="header__upload-area is-mobile-only">
+                        <img src="@/assets/img/lnr-upload.svg"></div>
+                </div>
                 <!-- div id="nav">
                     <router-link to="/">Home</router-link> <router-link to="/about">About</router-link>
                 </div -->
@@ -18,8 +24,9 @@
             <div class="navbar-menu" :class="{'is-active': expanded}">
                 <div class="navbar-end">
                     <RouterLink v-for="(navigationLink, index) in mainNavigation" :to="navigationLink.path"
-                       v-bind:key="index"
-                       class="navbar-item">{{ navigationLink.name }}</RouterLink>
+                                v-bind:key="index"
+                                class="navbar-item">{{ navigationLink.name }}
+                    </RouterLink>
                 </div>
             </div>
         </div>

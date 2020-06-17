@@ -1,0 +1,9 @@
+.page__content {
+    padding-top: $header-height-mobile;
+}
+
+@media screen and (min-width: $tablet) {
+    .page__content {
+        padding-top: $header-height-desktop;
+    }
+}
