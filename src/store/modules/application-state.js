@@ -43,12 +43,11 @@ const actions = {
     setScreenSize: ({commit}, {width, height}) => {
         for (let viewportName in viewports) {
             let viewport = viewports[viewportName];
-            console.log(viewport);
             if (viewport.minWidth <= width && width <= viewport.maxWidth) {
                 commit('SET_VIEWPORT', viewport.name);
             }
         }
-        commit('SET_SCREEN_SIZE', {width: width, height: height})
+        commit('SET_SCREEN_SIZE', {width: width, height: height});
     }
 };
 

@@ -1,0 +1,24 @@
+.field {
+    background: white;
+
+    .label {
+        color: $primary-dark;
+    }
+
+    .control {
+        border: none;
+
+        .input {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            box-shadow: none;
+            border-radius: 0;
+            border-width: 2px;
+
+            &.is-primary {
+                border-color: $primary-dark;
+            }
+        }
+    }
+}

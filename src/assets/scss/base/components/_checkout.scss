@@ -1,0 +1,109 @@
+.checkout {
+    background-color: $grey-lightest;
+    max-width: 400px;
+    margin: auto;
+    max-height: 42rem;
+    overflow-y: auto;
+
+
+    .checkout__canvas-3d {
+        background: $primary;
+    }
+
+
+    .materials__select {
+
+        .select__material-option {
+            padding: 0.2rem 1rem;
+
+            &.is-selected {
+                background-color: $primary;
+
+                .material-option__content {
+                    background-color: $primary-lighter;
+                }
+            }
+        }
+
+        .material-option__content {
+            background-color: $white;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+
+        .material-option__image {
+            width: 15%;
+            min-width: 4.5rem;
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        }
+
+        .material-option__data {
+            padding: 2px 1rem;
+            line-height: 1;
+            display: block;
+            width: 50%;
+            min-width: 150px;
+
+            .material-option__label {
+                display: block;
+            }
+
+            .material-option__description {
+                font-size: $size-7;
+            }
+        }
+
+        .material-option__color-select {
+            padding: 2px;
+            width: 6rem;
+            text-align: right;
+        }
+
+        .material-option__price {
+            font-family: MetaProNormal, sans-serif;
+            font-weight: bold;
+        }
+
+        .material-option__color-select {
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-trigger {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                height: 2rem;
+            }
+
+            .dropdown-icon {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                max-width: 4rem;
+                background-color: $white;
+                border: 1px solid $primary;
+            }
+
+            .dropdown-menu {
+                background-color: white;
+                min-width: 0;
+                right: 0;
+            }
+
+            .dropdown-content {
+                padding: 0;
+            }
+
+            .dropdown-item {
+                height: 2rem;
+                border-bottom: 1px solid $primary;
+            }
+        }
+    }
+}

@@ -56,7 +56,7 @@
     import {mapGetters} from "vuex";
 
     export default {
-        name: "Footer.vue",
+        name: "Footer",
         computed: {
             ...mapGetters(['footerNavigation'])
         }
