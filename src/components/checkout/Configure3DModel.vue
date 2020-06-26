@@ -1,5 +1,6 @@
 <template>
     <div class="checkout__configure-3d-model">
+        <Canvas3D></Canvas3D>
         <div class="configure-3d-model__measurements">
             <div class="field">
                 <label class="label">Objektname</label>
@@ -87,8 +88,11 @@
 </template>
 
 <script>
+    import Canvas3D from "./Canvas3D";
+
     export default {
         name: "Configure3DModel",
+        components: {Canvas3D},
         data() {
             return {
                 unit: "mm",

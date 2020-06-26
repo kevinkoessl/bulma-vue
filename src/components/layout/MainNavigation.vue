@@ -8,7 +8,9 @@
                     </div>
                 </RouterLink>
                 <div class="navbar-item">
-                    <div class="header__upload-area is-mobile-only">
+                    <div v-if="showUploadButton"
+                            @click="showFileUpload"
+                         class="header__upload-area is-mobile-only">
                         <img src="@/assets/img/lnr-upload.svg"></div>
                 </div>
                 <!-- div id="nav">
@@ -35,6 +37,7 @@
 
 <script>
     import {mapGetters} from 'vuex'
+    import {orderProcess} from "../../store/order-process";
 
     export default {
         name: "MainNavigation",
@@ -44,7 +47,23 @@
             }
         },
         computed: {
-            ...mapGetters(['mainNavigation'])
+            ...mapGetters(['mainNavigation', 'currentViewport']),
+            currentOrderProcessStep: {
+                get() {
+                    return this.$store.getters['currentOrderProcessStep'];
+                },
+                set(orderProcessStep) {
+                    this.$store.dispatch('setCurrentOrderProcessStep', orderProcessStep);
+                }
+            },
+            showUploadButton() {
+                return this.currentOrderProcessStep === orderProcess.STEPS.NO_ORDER_ONGOING || this.currentOrderProcessStep === orderProcess.STEPS.ORDER_COMPLETED;
+            },
+        },
+        methods: {
+            showFileUpload() {
+                this.currentOrderProcessStep = orderProcess.STEPS.FILE_UPLOAD;
+            }
         },
         created() {
             this.$store.dispatch('fetchMainNavigation')

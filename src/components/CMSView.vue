@@ -1,7 +1,6 @@
 <template>
     <div class="cms-view">
         <MainHero></MainHero>
-        <Checkout></Checkout>
         <Steps class="is-desktop-only"/>
         <div class="cms-view__content">
             <div class="container">
@@ -27,12 +26,11 @@
     import MainHero from "./layout/MainHero";
     import StoryNavigation from "./layout/StoryNavigation";
     import Steps from "./layout/Steps";
-    import Checkout from "./checkout/Checkout";
+
 
     export default {
         name: 'CMSView',
         components: {
-            Checkout,
             Steps,
             StoryNavigation,
             MainHero

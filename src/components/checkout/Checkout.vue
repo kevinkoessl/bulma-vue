@@ -1,7 +1,6 @@
 <template>
     <div id="checkout" class="checkout">
         <canvas3D/>
-
         <Configure3DModel/>
     </div>
 </template>

@@ -1,8 +1,10 @@
 import {viewports} from '../viewports'
+import {orderProcess} from "../order-process";
 
 const state = {
     stickyContainers: [],
-    viewport: viewports.MOBILE.name,
+    currentViewport: viewports.MOBILE.name,
+    currentOrderProcessStep: orderProcess.STEPS.NO_ORDER_ONGOING,
     screenSize: {
         width: 0,
         height: 0,
@@ -16,8 +18,11 @@ const mutations = {
     'SET_SCREEN_SIZE'(state, screenSize) {
         state.screenSize = screenSize;
     },
-    'SET_VIEWPORT'(state, viewportName) {
-        state.viewport = viewportName;
+    'SET_CURRENT_VIEWPORT'(state, viewportName) {
+        state.currentViewport = viewportName;
+    },
+    'SET_CURRENT_ORDER_PROCESS_STEP'(state, orderProcessStep) {
+        state.currentOrderProcessStep = orderProcessStep
     }
 };
 
@@ -44,10 +49,13 @@ const actions = {
         for (let viewportName in viewports) {
             let viewport = viewports[viewportName];
             if (viewport.minWidth <= width && width <= viewport.maxWidth) {
-                commit('SET_VIEWPORT', viewport.name);
+                commit('SET_CURRENT_VIEWPORT', viewport.name);
             }
         }
         commit('SET_SCREEN_SIZE', {width: width, height: height});
+    },
+    setCurrentOrderProcessStep: ({commit}, orderProcessStep) => {
+        commit('SET_CURRENT_ORDER_PROCESS_STEP', orderProcessStep);
     }
 };
 
@@ -67,8 +75,11 @@ const getters = {
     screenSize: state => {
         return {...state.screenSize};
     },
-    viewport: state => {
-        return {...state.viewport};
+    currentViewport: state => {
+        return state.currentViewport;
+    },
+    currentOrderProcessStep: state => {
+        return state.currentOrderProcessStep;
     }
 };
 
